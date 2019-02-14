@@ -1,8 +1,6 @@
 # Names and Naming
 
-The [data-before.csv][] file contains terse, ambiguous, and misleading names. This isn't unusual! How can we be be more explicit and communicate more clearly? The fist step is to use better names.
-
-[data-before.csv]: https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/data-before.csv
+The [data-before.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-before.csv) file contains terse, ambiguous, and misleading names. This isn't unusual! How can we be be more explicit and communicate more clearly? The fist step is to use better names.
 
 
 ## All the Names We Need
@@ -15,7 +13,7 @@ A URL has three main parts:
 
 1. protocol, e.g. `https`
 2. host, e.g. `github.com`
-3. path, e.g. `jamesaoverton/obo-tutorial/`
+3. path, e.g. `OHSU-Library/obo-tutorial/`
 
 The protocol tells you how to get the resource. Common protocols for web pages are [`http`][HTTP] (HyperText Transfer Protocol) and [`https`][HTTPS] (HTTP Secure). The host is the name of the server to contact, which can be a numeric [IP address][IP], but is more often a [domain name][DNS]. The path is the name of the resource on that server.
 
@@ -72,5 +70,5 @@ Names are most useful when everything that we want to talk about has only one na
 
 Coordinating names can be a challenge. The challenge only increases when the community of communicators is large, and our knowledge of the things we're talking about is changing quickly. I'm sure you'll recognize this situation in your field of research: new terminology is introduced, revised and revised again to fit new facts and usage, and then perhaps settles into some stable textbook meaning or disappears all together.
 
-[Ontologies](https://github.com/jamesaoverton/obo-tutorial/blob/master/docs/obo.md) are part of the solution to the problem of coordinating names.
+[Ontologies](https://github.com/OHSU-Library/obo-tutorial/blob/master/docs/obo.md) are part of the solution to the problem of coordinating names.
 
