@@ -5,9 +5,13 @@ IRIs give us all the globally unique names that we need. Ontologies give us syst
 "Using" an OBO reference ontology term means using its IRI in your data. Every term should have just one IRI -- don't make up your own name for it, use the official one! In this section you'll learn how to find the terms you want, how to assess whether they're high-quality, and how to import them into the application ontology for your project. We'll illustrate these techniques by building an application ontology to support our running example.
 
 
-## Finding Ontology Terms
+## Finding Ontologies and Ontology Terms
 
 OBO ontologies are freely distributed, and there's a number of different web sites that you can use to find them. We usually begin by searching for an appropriate label, and then check to make sure that the textual and logical definitions fit what we need.
+
+
+### OBO Foundry
+
 
 
 ### Ontobee
@@ -22,6 +26,12 @@ OBO ontologies are freely distributed, and there's a number of different web sit
 [BioPortal](http://bioportal.bioontology.org) provides access to OBO ontologies and many more ontologies and terminologies for biology and medicine. If you can't find the term you're looking for using Ontobee, maybe you can find it using BioPortal. If the term you want belongs to an ontology that is not part of OBO, you might still be able to use it. See the section below on assessing ontologies for reuse.
 
 ![BioPortal screenshot](../images/bioportal.png)
+
+
+### Ontology Lookup Service (OLS)
+
+
+### Linked Open Vocabularies (LOV)
 
 
 ### OntoMaton
@@ -39,17 +49,6 @@ Several of the OBO principles and best practises are based on open source softwa
 
 - [GitHub](https://github.com)
 - [SourceForge](http://sourceforge.net)
-
-GitHub is built around the [Git](http://www.git-scm.com) distributed version control system. Sourceforge also supports Git, but more often you'll see project using [Subversion (SVN)](https://subversion.apache.org). Version control systems can be intimidating at first, but there are tutorials and applications to make life easier for beginners. If you're an absolute beginner, don't worry! You can probably do everything you'll need to do with just your web browser.
-
-- GitHub has a great [interactive Git tutorial](https://try.github.io)
-- Subversion's official documentation is a very good [book](http://svnbook.red-bean.com), free online and available in dead tree copies
-- If you're comfortable with the command line, every platform has official tools for SVN and Git
-- If you already use an Integrated Development Environment (IDE) of some sort, it's very likely to have Git and SVN support built-in
-- On Windows, most people seem to use [TortoiseSVN](http://tortoisesvn.tigris.org) as a graphical SVN client
-- For Mac it's more difficult to recommend a graphical SVN client: [Versions](http://versionsapp.com) is pretty but not free; [SvnX](https://code.google.com/p/svnx/) is free but less pretty
-- [SourceTree](http://www.sourcetreeapp.com) is a powerful, free application for working with Git, available for Windows and Mac
-- GitHub also has free graphical applications for Git on [Windows](https://windows.github.com) and [Mac](https://mac.github.com)
 
 OBO projects use the [Web Ontology Language (OWL)](http://www.w3.org/TR/owl2-overview/) and are distributed in OWL files. You can use the Ontobee and BioPortal websites to browse ontologies, but if you want to download the OWL file and work with it on your computer then you probably want to use [Protégé](http://protege.stanford.edu). Protégé is free, open source, and cross-platform.
 
@@ -134,7 +133,7 @@ Several related OBO principles require that an ontology have a community of [use
 
 We've just seen how to find OBO ontologies and terms, and how to assess their quality. Now let's put that into practise.
 
-Starting with data like our [data-before.csv](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/data-before.csv) spreadsheet, my first step is usually to create a list of all the "local" terms I want to "map" to reference ontology terms. I put this list in a spreadsheet. Then I use Ontobee and OntoMaton to find one ontology term for each local term. Usually I can find one, with a little work, but sometimes I can't. My third step is to decide how to get each term into my application ontology. There are four main techniques that I use, each described in the next section:
+Starting with data like our [data-before.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-before.csv) spreadsheet, the first step is usually to create a list of all the "local" terms you want to "map" to reference ontology terms. You can put this list in a spreadsheet. Then I use Ontobee and OntoMaton to find one ontology term for each local term. Usually I can find one, with a little work, but sometimes I can't. My third step is to decide how to get each term into my application ontology. There are four main techniques that I use, each described in the next section:
 
 1. if there's just a few terms from the reference ontology, I'll MIREOT them using OntoFox
 2. if I want to use many terms from a small reference ontology, I'll import the whole thing using Protégé
@@ -147,14 +146,14 @@ So those are my three steps:
 2. search for reference ontology terms
 3. decide how to import each term into my application ontology
 
-This [Google spreadsheet](https://docs.google.com/spreadsheets/d/16_CcUQc5bgAiJn2VALGp537uQzavInd5tyqzTbNvQLI/edit?usp=sharing) shows the list of terms from [data-before.csv](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/data-before.csv), the reference ontology terms I want to map them too, and the import technique I will use. It also shows how you can use the OntoMaton plugin to make searching easier.
+This [Google spreadsheet](https://docs.google.com/spreadsheets/d/16_CcUQc5bgAiJn2VALGp537uQzavInd5tyqzTbNvQLI/edit?usp=sharing) shows the list of terms from [data-before.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-before.csv), the reference ontology terms I want to map them too, and the import technique I will use. It also shows how you can use the OntoMaton plugin to make searching easier.
 
-I've saved a copy of the Google spreadsheet to [terms.csv](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/terms.csv), and I've written some example code for doing the conversion automatically: [TermMapper](https://github.com/jamesaoverton/obo-tutorial/blob/master/code/src/java/obo_tutorial/TermMapper.java). If you follow the instructions in the [code/README.md](https://github.com/jamesaoverton/obo-tutorial/blob/master/code/README.md), you can run it using a command like this:
+I've saved a copy of the Google spreadsheet to [terms.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/terms.csv), and I've written some example code for doing the conversion automatically: [TermMapper](https://github.com/OHSU-Library/obo-tutorial/blob/master/code/src/java/obo_tutorial/TermMapper.java). If you follow the instructions in the [code/README.md](https://github.com/OHSU-Library/obo-tutorial/blob/master/code/README.md), you can run it using a command like this:
 
     cd examples
     java -jar ../bin/obo-tutorial.jar map terms.csv data-before.csv data-after.csv
 
-You can see the result in [data-after.csv](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/data-after.csv).
+You can see the result in [data-after.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-after.csv).
 
 
 ## Importing Terms
@@ -198,7 +197,7 @@ The MIREOT technique and OntoFox tool are the right choice for importing a limit
 
 QTT is a technique for transforming tables of data about terms into OWL format. In the table you have a row for each term with columns for the IRI, the label, the definition, and other annotations. You can also have columns with IRIs for other terms that have a well-defined relationship to the term in that row, such as the parent term. This is the input to the QTT tool, and the output is an OWL representation of the same data ready to be used in your ontology.
 
-The [qtt.txt](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/qtt.txt) file is a tab-separated spreadsheet with the two local terms we want to define for our example: strains of inbred rats and mice. These terms should probably be defined in some OBO ontology but I haven't managed to find them. It suits our current purposes to use them as an example of application ontology terms. As you can see, I've given the term ID in the first column, then annotations such as the label, definition, and editor. I've also given the IRI of the parent term.
+The [qtt.txt](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/qtt.txt) file is a tab-separated spreadsheet with the two local terms we want to define for our example: strains of inbred rats and mice. These terms should probably be defined in some OBO ontology but I haven't managed to find them. It suits our current purposes to use them as an example of application ontology terms. As you can see, I've given the term ID in the first column, then annotations such as the label, definition, and editor. I've also given the IRI of the parent term.
 
 Older versions of Protégé supported the [MappingMaster](http://protege.cim3.net/cgi-bin/wiki.pl?MappingMaster) plugin for QTT, but it is no longer maintained. If you know how to write Java code and use OWLAPI then it's straightfoward to write your own QTT code. But the easiest solution is to use Ontorat.
 
@@ -213,7 +212,7 @@ The [ontorat.txt](https://github.com/jamesaoverton/obo-tutorial/blob/master/exam
 - double quotes are for annotation strings
 - angle brackets are for IRIs
 
-On the Ontorat website you can "Load Settings File" with this file to fill in the settings, then "Specify input data file" with a "File upload", and use `qtt.txt`. Then click "Get OWL (RDF/XML) Output File". The resulting OWL file is [ontorat.owl](https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/ontorat.owl). I changed the "Ontology IRI" for this file using Protégé to something more sensible than the default.
+On the Ontorat website you can "Load Settings File" with this file to fill in the settings, then "Specify input data file" with a "File upload", and use `qtt.txt`. Then click "Get OWL (RDF/XML) Output File". The resulting OWL file is [ontorat.owl](https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/ontorat.owl). I changed the "Ontology IRI" for this file using Protégé to something more sensible than the default.
 
 
 ### Importing Ontologies with Protégé
@@ -268,7 +267,7 @@ The result is the [uberon-module.owl](https://github.com/jamesaoverton/obo-tutor
 First we saw how to find reference ontology terms and assess them. Then we saw how to create a "mapping" table for all our terms. And we just saw four techniques for importing reference ontology terms into our application ontology. The last step is to put all of this together and complete our application ontology.
 
 1. Open a new ontology
-2. Change its "Ontology IRI" to <https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/application.owl>
+2. Change its "Ontology IRI" to <https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/application.owl>
 3. Import three OWL files:
     - ontofox.owl
     - ontorat.owl
@@ -276,6 +275,6 @@ First we saw how to find reference ontology terms and assess them. Then we saw h
 4. Make adjustments: add terms, add annotations, *carefully* adjust the hierarchy
 5. Save the ontology to `application.owl`
 
-Or skip those steps and just look at the resulting [application.owl](https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/application.owl) file that I've created. The result includes all the terms listed in our `terms.csv` file, plus the dependencies that we want. I've also made adjustements to fit everything under BFO "entity" by adding `subClassOf` assertions here and there.
+Or skip those steps and just look at the resulting [application.owl](https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/application.owl) file that I've created. The result includes all the terms listed in our `terms.csv` file, plus the dependencies that we want. I've also made adjustements to fit everything under BFO "entity" by adding `subClassOf` assertions here and there.
 
-One application ontology can support many similar projects. In the [next section](https://github.com/jamesaoverton/obo-tutorial/blob/master/docs/processing-data.md) we'll see how to connect the data in the running example to the application ontology to take full advantage of it.
+One application ontology can support many similar projects. In the [next section](https://github.com/OHSU-Library/obo-tutorial/blob/master/docs/processing-data.md) we'll see how to connect the data in the running example to the application ontology to take full advantage of it.
