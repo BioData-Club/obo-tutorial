@@ -70,5 +70,5 @@ Names are most useful when everything that we want to talk about has only one na
 
 Coordinating names can be a challenge. The challenge only increases when the community of communicators is large, and our knowledge of the things we're talking about is changing quickly. I'm sure you'll recognize this situation in your field of research: new terminology is introduced, revised and revised again to fit new facts and usage, and then perhaps settles into some stable textbook meaning or disappears all together.
 
-[Ontologies](https://github.com/OHSU-Library/obo-tutorial/blob/master/docs/obo.md) are part of the solution to the problem of coordinating names.
+[Ontologies](obo.md) are part of the solution to the problem of coordinating names.
 
