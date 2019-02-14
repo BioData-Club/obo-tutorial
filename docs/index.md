@@ -74,5 +74,5 @@ qualifier    |English, mixed case       |PATO IRI                  |MIREOT
 comment      |English unstructured text |--                        |keep
 
 
-The updated data is in [data-after.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-after.csv) and the final result of this tutorial is [obo-tutorial.owl](https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl). To learn how to get from here to there, [read on!](https://github.com/OHSU-Library/obo-tutorial/blob/master/docs/names.md).
+The updated data is in [data-after.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-after.csv) and the final result of this tutorial is [obo-tutorial.owl](https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl). To learn how to get from here to there, [read on!](names.md)
 
