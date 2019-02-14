@@ -28,5 +28,5 @@ OBO projects all share a commitment to a set of principles and best practises.  
 - [OBO Foundry Principles](http://obofoundry.github.io/principles/fp-000-summary.html)
 - [OBO Foundry Operations Committee](http://obofoundry.github.io/docs/OperationsCommittee.html)
 
-Now let's see how to [use and reuse ontology terms](https://github.com/OHSU-Library/obo-tutorial/blob/master/docs/using-and-reusing.md).
+Now let's see how to [use and reuse ontology terms](using-and-reusing.md).
 
