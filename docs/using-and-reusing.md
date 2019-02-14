@@ -28,13 +28,17 @@ OBO ontologies are freely distributed, and there's a number of different web sit
 
 The [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index) is a repository for biomedical ontologies that aims to provide a single point of access to the latest ontology versions. You can browse the ontologies through the website as well as programmatically via the OLS API. OLS is developed and maintained by the Samples, Phenotypes and Ontologies Team (SPOT) at EMBL-EBI.
 
+![OLS screenshot](ols.png)
+
 ### Linked Open Vocabularies (LOV)
 
 [Linked Open Vocabularies (LOV)]() is a repository for ontologies on the web.  If you need a concept from an ontology outside the domain of biomedicine, this is a good place to look.  Originally hosted by the Open Knowledge Foundation, it is now maintained by the Ontology Engineering Group (OEG) at the Computer Science School at Universidad Politécnica de Madrid (UPM).
 
+![LOV screenshot](lov.png)
+
 ### OntoMaton
 
-[OntoMaton](https://github.com/ISA-tools/OntoMaton#readme) is a useful plugin for [Google Spreadsheets](https://docs.google.com/spreadsheets/). It uses BioPortal to find and autocomplete terms in selected columns of your sheet. You can also configure it to use only the ontologies you prefer, such as only OBO ontologies. Restrict to the smallest set of ontologies you can to improve search speed. Use the term links to check their definitions! When I have a list of terms I want to map, it's often fastest to setup a new Google spreadsheet with OntoMaton configured to the ontologies I want to use.
+[OntoMaton](https://github.com/ISA-tools/OntoMaton#readme) is a useful plugin for [Google Spreadsheets](https://docs.google.com/spreadsheets/). It lets you search BioPortal, OLS, or LOV to find terms and include them in your spreadsheet.  Note that some of the configuration options are broken because Google has deprecated the APIs OntoMaton uses, but the search part works just fine.  The search results also include links to PURLs so you can check definitions before you use terms.  This is a good tool for quickly looking up term mappings.
 
 ![OntoMaton screenshot](ontomaton.png)
 
@@ -43,10 +47,7 @@ The [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index) is a reposi
 
 Ontobee lists all the OBO ontologies and a few more, but the official list is at the OBO home page: <http://obofoundry.org>. That list distinguishes between "OBO Foundry" ontologies that have been reviewed for their adherence to the OBO Foundry principles, and "OBO Library" ontologies that have made a commitment to the principles but have not been reviewed. For each entry there's a brief description of the domain, plus links to information pages and ontology files.
 
-Several of the OBO principles and best practises are based on open source software development best practises. These include keeping files in publicly accessible version control systems that track and store every change to the ontology. Most OBO projects use one of these websites for hosting project files in version control:
-
-- [GitHub](https://github.com)
-- [SourceForge](http://sourceforge.net)
+Several of the OBO principles and best practices are based on open source software development best practices. These include keeping files in publicly accessible version control systems that track and store every change to the ontology. Most OBO projects use [GitHub](https://github.com) but some still use [SourceForge](http://sourceforge.net).
 
 OBO projects use the [Web Ontology Language (OWL)](http://www.w3.org/TR/owl2-overview/) and are distributed in OWL files. You can use the Ontobee and BioPortal websites to browse ontologies, but if you want to download the OWL file and work with it on your computer then you probably want to use [Protégé](http://protege.stanford.edu). Protégé is free, open source, and cross-platform.
 
@@ -131,22 +132,17 @@ Several related OBO principles require that an ontology have a community of [use
 
 We've just seen how to find OBO ontologies and terms, and how to assess their quality. Now let's put that into practise.
 
-Starting with data like our [data-before.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-before.csv) spreadsheet, the first step is usually to create a list of all the "local" terms you want to "map" to reference ontology terms. You can put this list in a spreadsheet. Then I use Ontobee and OntoMaton to find one ontology term for each local term. Usually I can find one, with a little work, but sometimes I can't. My third step is to decide how to get each term into my application ontology. There are four main techniques that I use, each described in the next section:
+Starting with data like our [data-before.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-before.csv) spreadsheet, the first step is usually to create a list of all the "local" terms you want to "map" to reference ontology terms. You can put this list in a spreadsheet. Then you can use Ontobee and OntoMaton to find one ontology term for each local term. Usually one can be found with a little work, but sometimes not. The third step is to decide how to get each term into the application ontology. 
 
-1. if there's just a few terms from the reference ontology, I'll MIREOT them using OntoFox
-2. if I want to use many terms from a small reference ontology, I'll import the whole thing using Protégé
-3. if there are many terms from the reference ontology or the reference ontology has complex logical axioms, but I don't want to import the whole thing, then I'll extract the terms I need using OWLAPI
-4. if there's no reference ontology term, then I'll define the term for my application ontology using QTT or in Protégé
-
-So those are my three steps:
+So those are the three steps:
 
 1. make a list of local terms
 2. search for reference ontology terms
 3. decide how to import each term into my application ontology
 
-This [Google spreadsheet](https://docs.google.com/spreadsheets/d/16_CcUQc5bgAiJn2VALGp537uQzavInd5tyqzTbNvQLI/edit?usp=sharing) shows the list of terms from [data-before.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-before.csv), the reference ontology terms I want to map them too, and the import technique I will use. It also shows how you can use the OntoMaton plugin to make searching easier.
+This [Google spreadsheet](https://docs.google.com/spreadsheets/d/16_CcUQc5bgAiJn2VALGp537uQzavInd5tyqzTbNvQLI/edit?usp=sharing) shows the list of terms from [data-before.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-before.csv), the reference ontology terms to map them to, and the import technique to use. It also shows how you can use the OntoMaton plugin to make searching easier.
 
-I've saved a copy of the Google spreadsheet to [terms.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/terms.csv).
+A copy of the Google spreadsheet can be found in the [terms.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/terms.csv) file.
 
 ## Importing Terms
 
@@ -161,7 +157,7 @@ When you MIREOT a term, you don't have to include its parent terms or logical ax
 
 #### Importing Sets of Terms Using OBO ROBOT
 
-
+[ROBOT](http://robot.obolibrary.org/) is a tool for working with Open Biomedical Ontologies. It can be used as a command-line tool or as a library for any language on the Java Virtual Machine.  It has an EXTRACT command that enables extraction of sets of terms from ontologies with a variety of techniques, including MIREOT.  [Refer to the documentation to learn more](http://robot.obolibrary.org/extract).
 
 #### Importing Sets of Terms Using OntoFox
 
