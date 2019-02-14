@@ -10,38 +10,36 @@ IRIs give us all the globally unique names that we need. Ontologies give us syst
 OBO ontologies are freely distributed, and there's a number of different web sites that you can use to find them. We usually begin by searching for an appropriate label, and then check to make sure that the textual and logical definitions fit what we need.
 
 
-### OBO Foundry
-
-
-
 ### Ontobee
 
 [Ontobee](http://ontobee.org) lists all the OBO ontologies and provides useful search and analysis tools. Many OBO projects use it as the endpoint for their PURLS -- if you click <http://purl.obolibrary.org/obo/OBI_0000070> you'll be taken to the Ontobee page for OBI's "assay" term. Ontobee also provides information on how each term is used in other OBO ontologies. Ontobee term pages provide RDF/OWL data that can be used by software. I use Ontobee all the time for finding OBO terms, either within an ontology that I know or across all the OBO projects.
 
-![Ontobee screenshot](../images/ontobee.png)
+![Ontobee screenshot](https://github.com/OHSU-Library/obo-tutorial/tree/master/images/ontobee.png)
 
 
 ### BioPortal
 
 [BioPortal](http://bioportal.bioontology.org) provides access to OBO ontologies and many more ontologies and terminologies for biology and medicine. If you can't find the term you're looking for using Ontobee, maybe you can find it using BioPortal. If the term you want belongs to an ontology that is not part of OBO, you might still be able to use it. See the section below on assessing ontologies for reuse.
 
-![BioPortal screenshot](../images/bioportal.png)
+![BioPortal screenshot](https://github.com/OHSU-Library/obo-tutorial/tree/master/images/bioportal.png)
 
 
 ### Ontology Lookup Service (OLS)
 
+The [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index) is a repository for biomedical ontologies that aims to provide a single point of access to the latest ontology versions. You can browse the ontologies through the website as well as programmatically via the OLS API. OLS is developed and maintained by the Samples, Phenotypes and Ontologies Team (SPOT) at EMBL-EBI.
 
 ### Linked Open Vocabularies (LOV)
 
+[Linked Open Vocabularies (LOV)]() is a repository for ontologies on the web.  If you need a concept from an ontology outside the domain of biomedicine, this is a good place to look.  Originally hosted by the Open Knowledge Foundation, it is now maintained by the Ontology Engineering Group (OEG) at the Computer Science School at Universidad Politécnica de Madrid (UPM).
 
 ### OntoMaton
 
 [OntoMaton](https://github.com/ISA-tools/OntoMaton#readme) is a useful plugin for [Google Spreadsheets](https://docs.google.com/spreadsheets/). It uses BioPortal to find and autocomplete terms in selected columns of your sheet. You can also configure it to use only the ontologies you prefer, such as only OBO ontologies. Restrict to the smallest set of ontologies you can to improve search speed. Use the term links to check their definitions! When I have a list of terms I want to map, it's often fastest to setup a new Google spreadsheet with OntoMaton configured to the ontologies I want to use.
 
-![OntoMaton screenshot](../images/ontomaton.png)
+![OntoMaton screenshot](https://github.com/OHSU-Library/obo-tutorial/tree/master/images/ontomaton.png)
 
 
-## Finding Ontologies
+## Other places to find ontologies
 
 Ontobee lists all the OBO ontologies and a few more, but the official list is at the OBO home page: <http://obofoundry.org>. That list distinguishes between "OBO Foundry" ontologies that have been reviewed for their adherence to the OBO Foundry principles, and "OBO Library" ontologies that have made a commitment to the principles but have not been reviewed. For each entry there's a brief description of the domain, plus links to information pages and ontology files.
 
