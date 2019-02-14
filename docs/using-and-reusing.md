@@ -14,14 +14,14 @@ OBO ontologies are freely distributed, and there's a number of different web sit
 
 [Ontobee](http://ontobee.org) lists all the OBO ontologies and provides useful search and analysis tools. Many OBO projects use it as the endpoint for their PURLS -- if you click <http://purl.obolibrary.org/obo/OBI_0000070> you'll be taken to the Ontobee page for OBI's "assay" term. Ontobee also provides information on how each term is used in other OBO ontologies. Ontobee term pages provide RDF/OWL data that can be used by software. I use Ontobee all the time for finding OBO terms, either within an ontology that I know or across all the OBO projects.
 
-![Ontobee screenshot](https://github.com/OHSU-Library/obo-tutorial/tree/master/images/ontobee.png)
+![Ontobee screenshot](ontobee.png)
 
 
 ### BioPortal
 
 [BioPortal](http://bioportal.bioontology.org) provides access to OBO ontologies and many more ontologies and terminologies for biology and medicine. If you can't find the term you're looking for using Ontobee, maybe you can find it using BioPortal. If the term you want belongs to an ontology that is not part of OBO, you might still be able to use it. See the section below on assessing ontologies for reuse.
 
-![BioPortal screenshot](https://github.com/OHSU-Library/obo-tutorial/tree/master/images/bioportal.png)
+![BioPortal screenshot](bioportal.png)
 
 
 ### Ontology Lookup Service (OLS)
@@ -36,7 +36,7 @@ The [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index) is a reposi
 
 [OntoMaton](https://github.com/ISA-tools/OntoMaton#readme) is a useful plugin for [Google Spreadsheets](https://docs.google.com/spreadsheets/). It uses BioPortal to find and autocomplete terms in selected columns of your sheet. You can also configure it to use only the ontologies you prefer, such as only OBO ontologies. Restrict to the smallest set of ontologies you can to improve search speed. Use the term links to check their definitions! When I have a list of terms I want to map, it's often fastest to setup a new Google spreadsheet with OntoMaton configured to the ontologies I want to use.
 
-![OntoMaton screenshot](https://github.com/OHSU-Library/obo-tutorial/tree/master/images/ontomaton.png)
+![OntoMaton screenshot](ontomaton.png)
 
 
 ## Other places to find ontologies
@@ -146,13 +146,7 @@ So those are my three steps:
 
 This [Google spreadsheet](https://docs.google.com/spreadsheets/d/16_CcUQc5bgAiJn2VALGp537uQzavInd5tyqzTbNvQLI/edit?usp=sharing) shows the list of terms from [data-before.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-before.csv), the reference ontology terms I want to map them too, and the import technique I will use. It also shows how you can use the OntoMaton plugin to make searching easier.
 
-I've saved a copy of the Google spreadsheet to [terms.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/terms.csv), and I've written some example code for doing the conversion automatically: [TermMapper](https://github.com/OHSU-Library/obo-tutorial/blob/master/code/src/java/obo_tutorial/TermMapper.java). If you follow the instructions in the [code/README.md](https://github.com/OHSU-Library/obo-tutorial/blob/master/code/README.md), you can run it using a command like this:
-
-    cd examples
-    java -jar ../bin/obo-tutorial.jar map terms.csv data-before.csv data-after.csv
-
-You can see the result in [data-after.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-after.csv).
-
+I've saved a copy of the Google spreadsheet to [terms.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/terms.csv).
 
 ## Importing Terms
 
@@ -164,6 +158,9 @@ Once you've found the perfect term, how do you get it into your application onto
 Using an ontology term means using its IRI, but you will also want to keep its label, definition, and other annotations. [MIREOT: The minimum information to reference an external ontology term](http://iospress.metapress.com/content/h54m2237310v13x1/) is a guideline for what information to include when importing a term. We even use "MIREOT" as a verb: "You should MIREOT that term into your ontology."
 
 When you MIREOT a term, you don't have to include its parent terms or logical axioms, but if you don't then you have to be careful. As an example, the term [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) is about 29 nodes deep in the NCBI Taxonomy. If you want to use that term, you probably don't want to import all its ancestors. But you do have to ensure that everything you say about that term is still true! You could place *Homo sapiens* under [Mammalia](http://purl.obolibrary.org/obo/NCBITaxon_40674) in your application ontology, which would be true, even if it doesn't include all the information that's in the NCBI Taxonomy. Don't place it under the NCBI term [Mus musculus](http://purl.obolibrary.org/obo/NCBITaxon_10090) because then your assertion would be false!
+
+#### Importing Sets of Terms Using OBO ROBOT
+
 
 
 #### Importing Sets of Terms Using OntoFox
@@ -184,27 +181,16 @@ Beware that including too many intermediate terms can cause problems for the Ont
 
 OntoFox also provide a range of options for selecting which annotations you want to include, and for mapping between sets of annotations. Although the form on the web site only allows extracting terms from one ontology at a time, in a configuration file you can specify several ontologies each with a number of terms and other settings. This is another reason to learn how to use the [input configuration files](http://ontofox.hegroup.org/tutorial/index.php#input_format).
 
-The [ontofox.txt](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/ontofox.txt) file shows what an OntoFox input file looks like. It has four sections because we're importing from four ontologies: OBI, NCBI Taxonomy, MPATH, and PATO. It lists the low level and top level terms we want to import from each reference ontology. Each section has a different rule for selecting intermediates, but all of them use either  `includeAllAxiomsRecursively` or `includeAllAnnotationProperties` to get the full set of annotations. It also shows how to use `subClassOf` to place imported terms exactly where you want them.
+The [ontofox.txt](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/ontofox.txt) file shows what an OntoFox input file looks like. It has four sections because we're importing from four ontologies: OBI, NCBI Taxonomy, MPATH, and PATO. It lists the low level and top level terms we want to import from each reference ontology. Each section has a different rule for selecting intermediates, but all of them use either  `includeAllAxiomsRecursively` or `includeAllAnnotationProperties` to get the full set of annotations. It also shows how to use `subClassOf` to place imported terms exactly where you want them.
 
-On the OntoFox website you can "Upload input file" and with `ontofox.txt` then click "Get OWL (RDF/XML) Output File". The resulting OWL file is [ontofox.owl](https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/ontofox.owl).
-
-
-### Importing Lists of Terms with Quick Term Templates
-
-The MIREOT technique and OntoFox tool are the right choice for importing a limited number terms from other ontologies. For creating your own terms, Protégé is a good tool. But if you find yourself creating more than a few terms with very similar structure, you might wish that you had a spreadsheet. In that case, consider using the [Quick Term Template (QTT)](http://iospress.metapress.com/content/915402764wv061n6/) method.
-
-QTT is a technique for transforming tables of data about terms into OWL format. In the table you have a row for each term with columns for the IRI, the label, the definition, and other annotations. You can also have columns with IRIs for other terms that have a well-defined relationship to the term in that row, such as the parent term. This is the input to the QTT tool, and the output is an OWL representation of the same data ready to be used in your ontology.
-
-The [qtt.txt](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/qtt.txt) file is a tab-separated spreadsheet with the two local terms we want to define for our example: strains of inbred rats and mice. These terms should probably be defined in some OBO ontology but I haven't managed to find them. It suits our current purposes to use them as an example of application ontology terms. As you can see, I've given the term ID in the first column, then annotations such as the label, definition, and editor. I've also given the IRI of the parent term.
-
-Older versions of Protégé supported the [MappingMaster](http://protege.cim3.net/cgi-bin/wiki.pl?MappingMaster) plugin for QTT, but it is no longer maintained. If you know how to write Java code and use OWLAPI then it's straightfoward to write your own QTT code. But the easiest solution is to use Ontorat.
+On the OntoFox website you can "Upload input file" and with `ontofox.txt` then click "Get OWL (RDF/XML) Output File". The resulting OWL file is [ontofox.owl](https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/ontofox.owl).
 
 
 #### Importing Lists of Terms Using Ontorat
 
 [Ontorat](http://ontorat.hegroup.org) is another tool in the same family as Ontobee and OntoFox. As with OntoFox, you can use the form on the web site or upload a configuration file. And as with OntoFox, the configuration file has the advantage of being repeatable and providing more powerful options, at the cost of a slightly steeper learning curve.
 
-The [ontorat.txt](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/ontorat.txt) file shows what an Ontorat input file looks like. We're only using sections for annotations and superclasses, but there are other options. Read the [tutorial](http://ontorat.hegroup.org/tutorial/index.php) to get all the details, but the basic operation is to create a new class for each row in the QTT table, then create annotations and axioms by replacing every occurrence of `{$columnX}` with the contents of column X.
+The [ontorat.txt](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/ontorat.txt) file shows what an Ontorat input file looks like. We're only using sections for annotations and superclasses, but there are other options. Read the [tutorial](http://ontorat.hegroup.org/tutorial/index.php) to get all the details, but the basic operation is to create a new class for each row in the QTT table, then create annotations and axioms by replacing every occurrence of `{$columnX}` with the contents of column X.
 
 - single quotes are human-readable names for terms, and they should be defined with an IRI for that term
 - double quotes are for annotation strings
@@ -231,34 +217,11 @@ To import an ontology, first open your application ontology with Protégé. On t
 
 Here's a screenshot from the latest Protégé 5 beta release importing the 2014-08-18 version of OBI.
 
-![Protégé import screenshot](../images/import.png)
+![Protégé import screenshot](import.png)
 
+### Editing Ontologies by Hand
 
-### Extracting Ontology Modules with OWLAPI
-
-Sometimes you want to import too many terms for OntoFox, but the target ontology is too large to import all of it. There's a tool you can use in this middle case: the [OWLAPI](http://owlapi.sourceforge.net)'s [SyntacticLocalityModuleExtractor](http://owlapi.sourceforge.net/javadoc/index.html?uk/ac/manchester/cs/owlapi/modularity/SyntacticLocalityModuleExtractor.html). Given an ontology and a set of terms to extract, it will create a "module" with just those terms and the terms they depend on. These dependencies are recursive, so the tool will take your list of terms, add all the terms they depend on, then add all the terms those dependencies depend on, and so on until it finds a closed set of terms. The resulting ontology can be saved to an OWL file and imported into your application ontology.
-
-Using this technique requires using OWLAPI, which means writing some Java code. There's no web service to do it for you, but I've provided some example code.
-
-If the ontology has many logical axioms, the extracted module might still be too big. To reduce the number of logical axioms we can use one of the many commands provided by [owltools](https://github.com/owlcollab/owltools). The `--make-subset-by-properties` command takes a list of OWL Object Properties to keep, and removes all the rest.
-
-If you want to try this, download the latest [owltools-runner-all.jar](http://build.berkeleybop.org/job/owltools/lastSuccessfulBuild/artifact/OWLTools-Runner/bin/owltools-runner-all.jar), or [build it yourself](https://github.com/owlcollab/owltools), and put the file in the `bin` directory of this tutorial.
-
-Let's see this in action. First download [Uberon](purl.obolibrary.org/obo/uberon.owl) (it's about 60MB) to the `examples` directory, then `cd` to the `examples` directory. The second command  will use owltools to keep only `part_of` and `has_part` from Uberon. The third command will extract just the list of terms we want:
-
-    cd examples
-    java -jar ../bin/owltools-runner-all.jar uberon.owl --make-subset-by-properties BFO:0000050 BFO:0000051 -o uberon-subset.owl
-    java -jar ../bin/obo-tutorial.jar extract \
-      uberon-subset.owl \
-      uberon-terms.txt \
-      uberon-module.owl \
-      "https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/uberon-module.owl"
-
-The result is the [uberon-module.owl](https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/uberon-module.owl) file, with all the terms listed in [uberon-terms.txt](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/uberon-terms.txt) and all their `part_of/has_part` dependencies. To learn more see:
-
-- short official example (PDF) [The Rough Guide to the OWL API](http://owlapi.sourceforge.net/owled2011_tutorial.pdf)
-- example code: [Extractor.java](https://github.com/jamesaoverton/obo-tutorial/blob/master/code/src/java/obo_tutorial/Extractor.java)
-
+Some people prefer the precision and control of editing their ontologies by hand using the Turtle RDF syntax in a basic text editor.
 
 ## Putting it all Together
 
