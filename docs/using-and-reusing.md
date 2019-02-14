@@ -277,4 +277,4 @@ First we saw how to find reference ontology terms and assess them. Then we saw h
 
 Or skip those steps and just look at the resulting [application.owl](https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/application.owl) file that I've created. The result includes all the terms listed in our `terms.csv` file, plus the dependencies that we want. I've also made adjustements to fit everything under BFO "entity" by adding `subClassOf` assertions here and there.
 
-One application ontology can support many similar projects. In the [next section](https://github.com/OHSU-Library/obo-tutorial/blob/master/docs/processing-data.md) we'll see how to connect the data in the running example to the application ontology to take full advantage of it.
+One application ontology can support many similar projects. In the [next section](processing-data.md) we'll see how to connect the data in the running example to the application ontology to take full advantage of it.
