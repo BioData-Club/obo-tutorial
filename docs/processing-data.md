@@ -213,7 +213,7 @@ The example code is in [Modeller.java](https://github.com/OHSU-Library/obo-tutor
 
 Now we have the tools to build sophisticated linked data representations of our models. The example here is just that -- an example. It doesn't yet capture all the information in the table we started with. Building good models is hard work, requiring many decisions (large and small) specific to your application.
 
-During development it's usually convenient to have several files and use imports to link them together. But for a final version, a single file is often better. I've created a single [obo-tutorial.owl](https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl) file with both the application ontology and the converted data.
+During development it's usually convenient to have several files and use imports to link them together. But for a final version, a single file is often better. I've created a single [obo-tutorial.owl](https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl) file with both the application ontology and the converted data.
 
     cd examples
     java -jar ../bin/obo-tutorial.jar merge \

@@ -22,7 +22,7 @@ OBO ontology developers work hard to coordinate with other OBO projects. Each on
 
 The [OBO home page](http://obofoundry.org) lists all the Foundry and Library ontologies with a note about their domains. The information page and home page for each ontology will have more information about their scope.
 
-When searching for the right ontology for your new term, also keep in mind some of the topics we discussed above in the [Assessing Ontologies and Terms for Reuse](https://github.com/jamesaoverton/obo-tutorial/blob/master/docs/using-and-reusing.md#assessing-ontologies-and-terms-for-reuse) section, such as community support.
+When searching for the right ontology for your new term, also keep in mind some of the topics we discussed above in the [Assessing Ontologies and Terms for Reuse](https://github.com/OHSU-Library/obo-tutorial/blob/master/docs/using-and-reusing.md#assessing-ontologies-and-terms-for-reuse) section, such as community support.
 
 
 ### Trackers
@@ -65,7 +65,7 @@ If you don't find the term you're looking for, you should request a new term fro
 6. example of usage
 7. term editor: your name, and that of any collaborators, as it should appear in the ontology
 
-We covered most of these [Assessing Ontologies and Terms for Reuse](https://github.com/jamesaoverton/obo-tutorial/blob/master/docs/using-and-reusing.md#assessing-ontologies-and-terms-for-reuse), but submitting a term isn't quite the same thing as using a term. Let's look at these again from the perspective of a new term submission.
+We covered most of these [Assessing Ontologies and Terms for Reuse](https://github.com/OHSU-Library/obo-tutorial/blob/master/docs/using-and-reusing.md#assessing-ontologies-and-terms-for-reuse), but submitting a term isn't quite the same thing as using a term. Let's look at these again from the perspective of a new term submission.
 
 1. The [editor preferred term](http://purl.obolibrary.org/obo/IAO_0000111) is an unambiguous label that uniquely identifies the term within the OBO Foundry. (Some ontologies just use `rdfs:label` for this.) There must be one and only one editor preferred term, and it must be in American English. It should not contain any acronyms or jargon words, and it should make sense when read outside the context of a scientific investigation. As you might expect, all these requirements combine to make many of OBO's editor preferred terms long and ugly. But the most important thing is that they're clear! (See also the [OBO Foundry naming conventions](http://www.obofoundry.org/wiki/index.php/FP_012_naming_conventions).)
 

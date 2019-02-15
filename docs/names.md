@@ -7,7 +7,7 @@ The [data-before.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/e
 
 Why do people use terse, ambiguous, cryptic names for things? There are many reasons. In our day-to-day language we tend to use short names and abbreviations to save time and effort, relying on context to remove ambiguity. Unfortunately, context can fade with time and distance. There are also practical limitations: short names fit better into dense columns, and memory and storage were precious on legacy computer systems. But today storage is cheap, and better software can autocomplete values and display short names while storing longer, unambiguous names.
 
-You're already familiar with a simple yet powerful technology that can provide us with a practically unlimited number of unambiguous names. Here's an example: `<https://github.com/jamesaoverton/obo-tutorial/>`. It's a [URL][], also known as a Uniform Resource Locator or a web address, and it's one of the building blocks of the World Wide Web.
+You're already familiar with a simple yet powerful technology that can provide us with a practically unlimited number of unambiguous names. Here's an example: `<https://github.com/OHSU-Library/obo-tutorial/>`. It's a [URL][], also known as a Uniform Resource Locator or a web address, and it's one of the building blocks of the World Wide Web.
 
 A URL has three main parts:
 
