@@ -1,7 +1,7 @@
 ##### Import terms from OBI ######
 
 [URI of the OWL(RDF/XML) output file]
-https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/ontofox.owl
+https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/ontofox.owl
 
 [Source ontology]
 OBI
