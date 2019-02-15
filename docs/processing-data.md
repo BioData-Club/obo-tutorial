@@ -110,7 +110,7 @@ The simplest query we can do asks for all the triples. Paste this into Protégé
 
 Click "Execute" at the bottom and you should see a lot of triples in the results table, including our rows and lots of other stuff.
 
-![Protégé SPARQL screenshot](../images/sparql.png)
+![Protégé SPARQL screenshot](sparql.png)
 
 Here's a more focused query for just the groups:
 
@@ -204,41 +204,19 @@ And here's some simplified output Turtle data with some comments for clarity:
 
 The upshot is that we use the statements about each `tutorial:row` in the raw graph to make statements about the subject and its organ in the new graph. We've finally broken out of the rigid structure of the table into a flexible graph structure. In this small example we state that the subject is an instance of the NCBI's taxon "Mus musclus", that the organ is an instance of Uberon's "external nose", and that the organ is part of the subject.
 
-The [model.rq](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/model.rq) file contains a longer example of a SPARQL Update query -- longer, but still not capturing all the information in the original table. The results are in [data-after.ttl](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/data-after.ttl). If you open that file with Protégé it will import the application ontology and you can see all the data at once.
+The [model.rq](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/model.rq) file contains a longer example of a SPARQL Update query -- longer, but still not capturing all the information in the original table. The results are in [data-after.ttl](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-after.ttl). If you open that file with Protégé it will import the application ontology and you can see all the data at once.
 
-The example code is in [Modeller.java](https://github.com/jamesaoverton/obo-tutorial/blob/master/code/src/java/obo_tutorial/Modeller.java). If you follow the instructions in the [code/README.md](https://github.com/jamesaoverton/obo-tutorial/blob/master/code/README.md), you can run it using a command like this:
+The example code is in [Modeller.java](https://github.com/OHSU-Library/obo-tutorial/blob/master/code/src/java/obo_tutorial/Modeller.java). If you follow the instructions in the [code/README.md](https://github.com/OHSU-Library/obo-tutorial/blob/master/code/README.md), you can run it using a command like this:
 
     cd examples
     java -jar ../bin/obo-tutorial.jar model data-raw.ttl application.owl model.rq data-after.ttl
 
 Now we have the tools to build sophisticated linked data representations of our models. The example here is just that -- an example. It doesn't yet capture all the information in the table we started with. Building good models is hard work, requiring many decisions (large and small) specific to your application.
 
-[TODO: Update the tutorial with more information about modelling instance data with OBO ontologies.]
-
-During development it's usually convenient to have several files and use imports to link them together. But for a final version, a single file is often better. I've created a single [obo-tutorial.owl](https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl) file with both the application ontology and the
+During development it's usually convenient to have several files and use imports to link them together. But for a final version, a single file is often better. I've created a single [obo-tutorial.owl](https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl) file with both the application ontology and the converted data.
 
     cd examples
     java -jar ../bin/obo-tutorial.jar merge \
       data-after.ttl \
       obo-tutorial.owl \
-      "https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl"
-
-
-## Best Practises for Reasoning Over Large Data Sets
-
-One of the biggest benefits of using OWL is the availability of automated reasoners:
-
-- check for logical inconsistencies
-- check that logical definitions can be satisfied
-- infer new statements from existing ones
-
-There's an art to balancing logical power with reasoner performance, which can take some trial and error.
-
-WARNING: The current version of the application ontology should reason properly (and quickly) using Protégé 4 and ELK. You may see some warning about features that are not supported by ELK -- that's expected. I ran into errors using Protégé 5 with ELK. I have not been able to make HermiT work for the current version, probably because the Uberon module we extract is too large and complex.
-
-TODO: Finish writing this section.
-
-- [OWL 2 reasoning profiles](http://www.w3.org/TR/owl2-profiles/)
-- [HermiT OWL reasoner](http://hermit-reasoner.com)
-- [ELK OWL reasoner](https://code.google.com/p/elk-reasoner/) very fast for basic OWL reasoning
-
+      "https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl"
