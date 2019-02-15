@@ -1,10 +1,10 @@
 # Any text after # is just for notes and won't be used by Ontorat.
 
 [Online URL of the target OWL file (RDF/XML format)]
-# https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/ontorat.owl
+# https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/ontorat.owl
 
 [Online URL of the data file (Only Excel file (.xls, .xlsx) or tab-delimited text file (.txt)]
-# https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/qtt.txt
+# https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/qtt.txt
 
 Actual data starts from row: 2
 
@@ -36,6 +36,6 @@ ObjectProperty:
 DataProperty:
 
 [Term URIs start with]
-https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#
+https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#
 
 [Auto-generated term ID]
