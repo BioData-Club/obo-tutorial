@@ -3,13 +3,13 @@ PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd:   <http://www.w3.org/2001/XMLSchema#>
 PREFIX owl:   <http://www.w3.org/2002/07/owl#>
 PREFIX obo:   <http://purl.obolibrary.org/obo/>
-PREFIX tutorial: <https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#>
+PREFIX tutorial: <https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#>
 
 INSERT {
   GRAPH tutorial:data {
     tutorial:data
       rdf:type        owl:Ontology ;
-      owl:imports     <https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/application.owl> .
+      owl:imports     <https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/application.owl> .
     ?group
       rdfs:label      ?group_label .
     ?subject
