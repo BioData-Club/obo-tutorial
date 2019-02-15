@@ -1,11 +1,11 @@
 # Processing Data with Ontologies
 
-In the [previous section](https://github.com/jamesaoverton/obo-tutorial/blob/master/docs/using-and-reusing.md) we built an application ontology with all the terms we need to support our [data-before.csv](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/data-before.csv). The next step is to transform that data into linked data formats that can be easily integrated with the application ontology.
+In the [previous section](https://github.com/OHSU-Library/obo-tutorial/blob/master/docs/using-and-reusing.md) we built an application ontology with all the terms we need to support our [data-before.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-before.csv). The next step is to transform that data into linked data formats that can be easily integrated with the application ontology.
 
 
 ## Tables to Triples
 
-Ontologies are designed to support data sharing. There's a lot of scientific data in tables, such as spreadsheets and relational databases. But tables are hard to share. Even if we use IRIs as global names instead of local names, as we do in [data-after.csv](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/data-after.csv), there's still the rigid structure of columns to deal with -- you can't merge two tables until they have the same columns in the same order.
+Ontologies are designed to support data sharing. There's a lot of scientific data in tables, such as spreadsheets and relational databases. But tables are hard to share. Even if we use IRIs as global names instead of local names, as we do in [data-after.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-after.csv), there's still the rigid structure of columns to deal with -- you can't merge two tables until they have the same columns in the same order.
 
 It's easier to share data if we have a more flexible data structure. Linked data standards use a very flexible data structure: graphs, in the sense of "networks". There are many other meanings for the word "graph" but here we mean a set of nodes connected by links, sometimes called "vertices" and "edges". In a graph it's the connections between nodes that carry most of the information, and the order isn't important. When two graphs share some nodes, it's very easy to merge them into a single graph.
 
@@ -39,20 +39,20 @@ Switching from tables to triples makes data sharing easier, but there are some t
 Another important difference is the [open-world assumption](https://en.wikipedia.org/wiki/Open-world_assumption). Many programming languages and databases are built on the [closed-world assumption](https://en.wikipedia.org/wiki/Closed-world_assumption) that the system has comprehensive knowledge in its domain. For example, if a statement ABC is stored in the database then it is both known and true, but if ABC is not stored in the database then it is not known and assumed to be false. Linked data tools such as OWL do not make that assumption: if statement ABC is not known to be true or known to be false, it could still be either true or false. This makes good sense when you're merging data across the Internet, but it takes some getting used to.
 
 
-## Converting Relational Data to RDF
+## Converting Relational Data to RDF in Java with Apache Jena
 
 Let's see how to convert our example data from table to triples. I like to do this in a few steps. The first step just does the basic translation from tables to triples -- row-column-cell to subject-predicate-object and nothing more. These aren't very good triples. I call them "raw". But the raw triples are easy to work with and transform into better representations using standard linked data tools. The second step is to do exactly this, as we'll see in the next section.
 
-For the raw conversion we'll use some Java code with the [Apache Jena](http://jena.apache.org) library. We'll start with [data-after.csv](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/data-after.csv) and end with [data-raw.ttl](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/data-raw.ttl) (a Turtle file).
+For the raw conversion we'll use some Java code with the [Apache Jena](http://jena.apache.org) library. We'll start with [data-after.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-after.csv) and end with [data-raw.ttl](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-raw.ttl) (a Turtle file).
 
-Turtle is human-readable if we have a good set prefixes to shorten our IRIs to CURIEs. One convenient way to define the prefixes is in another Turtle file: see [prefixes.ttl](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/prefixes.ttl).
+Turtle is human-readable if we have a good set prefixes to shorten our IRIs to CURIEs. One convenient way to define the prefixes is in another Turtle file: see [prefixes.ttl](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/prefixes.ttl).
 
-The example code for the conversion is in [TripleConverter.java](https://github.com/jamesaoverton/obo-tutorial/blob/master/code/src/java/obo_tutorial/TripleConverter.java). If you follow the instructions in the [code/README.md](https://github.com/jamesaoverton/obo-tutorial/blob/master/code/README.md), you can run it using a command like this:
+The example code for the conversion is in [TripleConverter.java](https://github.com/OHSU-Library/obo-tutorial/blob/master/code/src/java/obo_tutorial/TripleConverter.java). If you follow the instructions in the [code/README.md](https://github.com/OHSU-Library/obo-tutorial/blob/master/code/README.md), you can run it using a command like this:
 
     cd examples
     java -jar ../bin/obo-tutorial.jar convert prefixes.ttl data-after.csv data-raw.ttl
 
-Here's part of [data-raw.ttl](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/data-raw.ttl) output file, for just one row:
+Here's part of [data-raw.ttl](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-raw.ttl) output file, for just one row:
 
     tutorial:row-1 a tutorial:row ;
       tutorial:column-datetime      "2014-01-01T10:21:00-0500" ;
@@ -69,7 +69,17 @@ Here's part of [data-raw.ttl](https://github.com/jamesaoverton/obo-tutorial/blob
 
 In the first line here `tutorial:row-1 a tutorial:row` means that `tutorial:row-1` has `rdf:type` of `tutorial:row` -- `a` is just a short form for `rdf:type`. As you can see, we have a statement for each cell, where the predicate is just the column. Most of the objects are CURIEs, but `datetime` is a literal string and `investigator` is a URI.
 
-There are other ways to convert tables to triples. The W3C has a standard [R2RML: RDB to RDF Mapping Language](http://www.w3.org/TR/r2rml/) that has several [implementations](http://www.w3.org/2001/sw/rdb2rdf/wiki/Implementations). One powerful tool you can look into is [D2RQ](http://d2rq.org), a system for converting back and forth between relational databases and RDF. You can use D2RQ to keep your relational database but translate it to RDF on the fly, and query it using SPARQL instead of SQL. But for this sort of job you'll want to skip the raw triples and use better modelling, as we'll see below.
+## Other Conversion Tools
+
+[Karma Data Integration](http://usc-isi-i2.github.io/karma/) is a GUI-based tool from the Information Sciences Institute at the University of Southern California.  It is pretty easy to get started with, particularly for anyone who is not a programmer.  There is a [decent tutorial](https://github.com/szeke/karma-tcdl-tutorial) that was originally presented at the 2015 Texas Conference on Digital Libraries.
+
+One powerful tool you can look into is [D2RQ](http://d2rq.org), a system for converting back and forth between relational databases and RDF. You can use D2RQ to keep your relational database but translate it to RDF on the fly, and query it using SPARQL instead of SQL. But for this sort of job you'll want to skip the raw triples and use better modelling, as we'll see below.
+
+[Linked Pipes ETL](https://etl.linkedpipes.com/) is a tool from Charles University in Prauge.  It is really powerful, but it also requires a lot of existing knowledge about Semantic Web technologies.  For example, most of its transformations are executed via SPARQL queries.
+
+OBO's ROBOT tool includes a [Template command](http://robot.obolibrary.org/template) that extends the QTT technique for converting CSVs to OWL.
+
+The [Monarch Initiative](http://monarchinitiative.org) has created a tool called [Dipper](https://github.com/monarch-initiative/dipper) that generates RDF triples from common scientific resources.
 
 Next we'll see how to query over these triples using SPARQL, then use SPARQL to transform the triples into more interesting structures.
 
@@ -78,9 +88,9 @@ Next we'll see how to query over these triples using SPARQL, then use SPARQL to 
 
 You can work with Turtle files in Protégé. By default, an RDF subject is assumed to be an OWL Individual (not an OWL Class), so you should look under the "Individuals" tab to find them. They also appear as "Members" of any class that they belong to in the "Classes" tab.
 
-If you open [data-raw.ttl](https://github.com/jamesaoverton/obo-tutorial/blob/master/examples/data-raw.ttl) in Protégé and go to the "Individuals" tab you'll see our three rows. In the "Annotations" view you'll see all the predicates and objects we asserted.
+If you open [data-raw.ttl](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-raw.ttl) in Protégé and go to the "Individuals" tab you'll see our three rows. In the "Annotations" view you'll see all the predicates and objects we asserted.
 
-![Protégé Individuals screenshot](../images/individuals.png)
+![Protégé Individuals screenshot](individuals.png)
 
 The next thing to try is Protégé's "SPARQL Query" tab. If you've worked with relational databases you'll be familiar with [SQL](https://en.wikipedia.org/wiki/SQL), the Structured Query Language. SPARQL is the equivalent for RDF graphs. You'll see some familiar parts from SQL mixed with patterns from Turtle.
 
@@ -91,7 +101,7 @@ Like Turtle, SPARQL queries should start by declaring a set of prefixes that wil
     PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
     PREFIX owl:      <http://www.w3.org/2002/07/owl#>
     PREFIX obo:      <http://purl.obolibrary.org/obo/>
-    PREFIX tutorial: <https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#>
+    PREFIX tutorial: <https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#>
 
 The simplest query we can do asks for all the triples. Paste this into Protégé below our prefixes, replacing the default query:
 
@@ -214,19 +224,6 @@ During development it's usually convenient to have several files and use imports
       "https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl"
 
 
-## Querying Instance Data with DL Query
-
-SPARQL can query over any RDF data, and OWL is built on RDF, but SPARQL isn't always the best tool when using OWL. DL Query is specific to OWL and can take advantage of OWL's logical power.
-
-TODO: Finish writing this section. In the meantime, here are some links to get you started:
-
-- [translation from OWL to RDF](http://www.w3.org/TR/owl2-mapping-to-rdf/)
-- [Manchester syntax for OWL](http://www.w3.org/TR/owl2-manchester-syntax/)
-- [DLQuery in Protégé](http://protegewiki.stanford.edu/wiki/DLQueryTab)
-- [DLQuery with OWLAPI examples](https://github.com/owlcs/owlapi/tree/version4/contract/src/test/java/uk/ac/manchester/owl/owlapi/tutorial/examples)
-- [SPARQL-DL](http://www.derivo.de/en/resources/sparql-dl-api/) can combine the two
-
-
 ## Best Practises for Reasoning Over Large Data Sets
 
 One of the biggest benefits of using OWL is the availability of automated reasoners:
@@ -245,5 +242,3 @@ TODO: Finish writing this section.
 - [HermiT OWL reasoner](http://hermit-reasoner.com)
 - [ELK OWL reasoner](https://code.google.com/p/elk-reasoner/) very fast for basic OWL reasoning
 
-
-In the [final section](https://github.com/jamesaoverton/obo-tutorial/blob/master/docs/ontology-development.md) we'll see more about ontology development, such as requesting new terms, development workflows, and release processes.
