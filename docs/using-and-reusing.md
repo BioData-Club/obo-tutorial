@@ -199,7 +199,7 @@ On the Ontorat website you can "Load Settings File" with this file to fill in th
 
 OBO ontologies are part of the web of linked data. Using terms from other ontologies means making links to resources across the web. Another form of linking is *import*: you can import another complete ontology or OWL file into your own ontology.
 
-For our current purposes, there are two main uses for OWL imports. The first is when MIREOT just isn't enough: you don't want to import just a selection of terms from another ontology, you want to import the whole thing. The second is using the results of OntoFox and Ontorat. These tools generate OWL files. Using a configuration file, you can run these tools again and again to update terms, generating new OWL files each time. You should keep those results in separate OWL files, then import those files into your application ontology. This clean separation makes it easy to update your MIREOT and QTT imports.
+For our current purposes, there are two main uses for OWL imports. The first is when MIREOT just isn't enough: you don't want to import just a selection of terms from another ontology, you want to import the whole thing. The second is using the results of OntoFox and Ontorat. These tools generate OWL files. Using a configuration file, you can run these tools again and again to update terms, generating new OWL files each time. You should keep those results in separate OWL files, then import those files into your application ontology. This clean separation makes it easy to update your MIREOT imports.
 
 Keep in mind that imports can be somewhat unpredictable. Tools such as Protégé will keep a local copy of imported files, which might not always be up-to-date. If you and your collaborators have different local copies of the imports, you won't see exactly the same terms and axioms, which can lead to all sorts of confusion!
 
@@ -217,7 +217,7 @@ Here's a screenshot from the latest Protégé 5 beta release importing the 2014-
 
 ### Editing Ontologies by Hand
 
-Some people prefer the precision and control of editing their ontologies by hand using the Turtle RDF syntax in a basic text editor.  Protege can export ontologies in Turtle format and there are several RDF format converters available on the web.
+Some people prefer the precision and control of editing their ontologies by hand using the [Turtle RDF](https://www.w3.org/TR/turtle/) syntax in a basic text editor.  Protege can export ontologies in Turtle format and there are several RDF format converters available on the web.
 
 ## Putting it all Together
 
