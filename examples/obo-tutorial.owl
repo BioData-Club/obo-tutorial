@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#"
-     xml:base="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl"
+<rdf:RDF xmlns="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#"
+     xml:base="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:obo-tutorial="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#"
+     xmlns:obo-tutorial="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#"
      xmlns:pato="http://purl.obolibrary.org/obo/pato#"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#"
@@ -13,7 +13,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
-    <owl:Ontology rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl"/>
+    <owl:Ontology rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl"/>
     
 
 
@@ -555,9 +555,9 @@
     
 
 
-    <!-- https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#group -->
+    <!-- https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#group -->
 
-    <owl:AnnotationProperty rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#group"/>
+    <owl:AnnotationProperty rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#group"/>
     
 
 
@@ -10532,9 +10532,9 @@
     
 
 
-    <!-- https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#B6C3F1 -->
+    <!-- https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#B6C3F1 -->
 
-    <owl:Class rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#B6C3F1">
+    <owl:Class rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#B6C3F1">
         <rdfs:label>B6C3F1</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
         <obo:IAO_0000111>B6C3F1</obo:IAO_0000111>
@@ -10546,9 +10546,9 @@
     
 
 
-    <!-- https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#F344N -->
+    <!-- https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#F344N -->
 
-    <owl:Class rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#F344N">
+    <owl:Class rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#F344N">
         <rdfs:label>F 344/N</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10116"/>
         <rdfs:seeAlso>http://www.informatics.jax.org/external/festing/rat/docs/F344.shtml</rdfs:seeAlso>
@@ -10686,123 +10686,123 @@
     
 
 
-    <!-- https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12 -->
+    <!-- https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12 -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12">
+    <owl:NamedIndividual rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10116"/>
         <rdfs:label>subject 12</rdfs:label>
-        <group rdf:resource="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#group-1"/>
-        <obo:RO_0000086 rdf:resource="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-sex"/>
+        <group rdf:resource="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#group-1"/>
+        <obo:RO_0000086 rdf:resource="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-sex"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-assay -->
+    <!-- https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-assay -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-assay">
+    <owl:NamedIndividual rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-assay">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0600020"/>
         <rdfs:label>subject 12 histology</rdfs:label>
-        <obo:OBI_0000293 rdf:resource="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12"/>
-        <obo:IAO_0000136 rdf:resource="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-organ"/>
+        <obo:OBI_0000293 rdf:resource="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12"/>
+        <obo:IAO_0000136 rdf:resource="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-organ"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-organ -->
+    <!-- https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-organ -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-organ">
+    <owl:NamedIndividual rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-organ">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002048"/>
         <rdfs:label>subject 12 lung</rdfs:label>
-        <obo:BFO_0000050 rdf:resource="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12"/>
+        <obo:BFO_0000050 rdf:resource="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-sex -->
+    <!-- https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-sex -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-sex">
+    <owl:NamedIndividual rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-12-sex">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PATO_0000383"/>
         <rdfs:label>subject 12 sex: female</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31 -->
+    <!-- https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31 -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31">
+    <owl:NamedIndividual rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
         <rdfs:label>subject 31</rdfs:label>
-        <group rdf:resource="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#group-2"/>
-        <obo:RO_0000086 rdf:resource="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-sex"/>
+        <group rdf:resource="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#group-2"/>
+        <obo:RO_0000086 rdf:resource="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-sex"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-assay -->
+    <!-- https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-assay -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-assay">
+    <owl:NamedIndividual rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-assay">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0600020"/>
         <rdfs:label>subject 31 histology</rdfs:label>
-        <obo:OBI_0000293 rdf:resource="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31"/>
-        <obo:IAO_0000136 rdf:resource="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-organ"/>
+        <obo:OBI_0000293 rdf:resource="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31"/>
+        <obo:IAO_0000136 rdf:resource="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-organ"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-organ -->
+    <!-- https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-organ -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-organ">
+    <owl:NamedIndividual rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-organ">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007827"/>
         <rdfs:label>subject 31 external nose</rdfs:label>
-        <obo:BFO_0000050 rdf:resource="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31"/>
+        <obo:BFO_0000050 rdf:resource="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-sex -->
+    <!-- https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-sex -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-sex">
+    <owl:NamedIndividual rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-31-sex">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PATO_0000384"/>
         <rdfs:label>subject 31 sex: male</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45 -->
+    <!-- https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45 -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45">
+    <owl:NamedIndividual rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10116"/>
         <rdfs:label>subject 45</rdfs:label>
-        <group rdf:resource="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#group-1"/>
-        <obo:RO_0000086 rdf:resource="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-sex"/>
+        <group rdf:resource="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#group-1"/>
+        <obo:RO_0000086 rdf:resource="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-sex"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-assay -->
+    <!-- https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-assay -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-assay">
+    <owl:NamedIndividual rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-assay">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/OBI_0600020"/>
         <rdfs:label>subject 45 histology</rdfs:label>
-        <obo:OBI_0000293 rdf:resource="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45"/>
-        <obo:IAO_0000136 rdf:resource="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-organ"/>
+        <obo:OBI_0000293 rdf:resource="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45"/>
+        <obo:IAO_0000136 rdf:resource="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-organ"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-organ -->
+    <!-- https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-organ -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-organ">
+    <owl:NamedIndividual rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-organ">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001235"/>
         <rdfs:label>subject 45 adrenal cortex</rdfs:label>
-        <obo:BFO_0000050 rdf:resource="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45"/>
+        <obo:BFO_0000050 rdf:resource="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-sex -->
+    <!-- https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-sex -->
 
-    <owl:NamedIndividual rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-sex">
+    <owl:NamedIndividual rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#subject-45-sex">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/PATO_0000384"/>
         <rdfs:label>subject 45 sex: male</rdfs:label>
     </owl:NamedIndividual>
@@ -10817,10 +10817,10 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#group-2">
+    <rdf:Description rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#group-2">
         <rdfs:label>group 2</rdfs:label>
     </rdf:Description>
-    <rdf:Description rdf:about="https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#group-1">
+    <rdf:Description rdf:about="https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#group-1">
         <rdfs:label>group 1</rdfs:label>
     </rdf:Description>
 </rdf:RDF>
