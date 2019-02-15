@@ -236,7 +236,7 @@ Filter Uberon to part_of and has_part
     `robot filter --input ext.owl --term BFO:0000050 --term BFO:0000051 --output uberon-subset.owl`
 
 Extract Uberon terms
-    `obot extract --method STAR --input uberon-subset.owl --term-file uberon-terms.txt --output uberon_mod.owl`
+    `obot extract --method STAR --input uberon-subset.owl --term-file uberon-terms.txt --output uberon-mod.owl`
 
 The result is the uberon-module.owl file, with all the terms listed in uberon-terms.txt and all their part_of/has_part dependencies. 
 
@@ -254,7 +254,7 @@ First we saw how to find reference ontology terms and assess them. Then we saw h
 3. Import three OWL files:
     - ontofox.owl
     - ontorat.owl
-    - uberon-module.owl
+    - uberon-mod.owl
 4. Make adjustments: add terms, add annotations, *carefully* adjust the hierarchy
     - Make GO_0008150 a subclass of BFO_0000007
     - Make MPATH_596 a subclass of GO_0008150
