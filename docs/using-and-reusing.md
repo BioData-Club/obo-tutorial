@@ -226,6 +226,19 @@ Here's a screenshot from the latest Protégé 5 beta release importing the 2014-
 
 ![Protégé import screenshot](import.png)
 
+### Extracting Ontology Modules with ROBOT
+
+Sometimes you want to import too many terms for OntoFox, but the target ontology is too large to import all of it.  Thre's a tool you can use in this case: OBO [ROBOT](http://robot.obolibrary.org/).  ROBOT is like a Swiss Army Knife for ontology manipulation.  It can do many things, including the steps we just did with OntoFox and Ontorat. Here we are going to use it to filter a source ontology down to a smaller subset and then we will extract the terms we want into a module.
+
+Download [Uberon](http://purl.obolibrary.org/obo/uberon/ext.owl) to the examples directory.
+
+Filter Uberon to part_of and has_part
+    `robot filter --input ext.owl --term BFO:0000050 --term BFO:0000051 --output uberon-subset.owl`
+
+Extract Uberon terms
+    `obot extract --method STAR --input uberon-subset.owl --term-file uberon-terms.txt --output uberon_mod.owl`
+
+The result is the uberon-module.owl file, with all the terms listed in uberon-terms.txt and all their part_of/has_part dependencies. 
 
 ### Editing Ontologies by Hand
 
@@ -243,6 +256,13 @@ First we saw how to find reference ontology terms and assess them. Then we saw h
     - ontorat.owl
     - uberon-module.owl
 4. Make adjustments: add terms, add annotations, *carefully* adjust the hierarchy
+    - Make GO_0008150 a subclass of BFO_0000007
+    - Make MPATH_596 a subclass of GO_0008150
+    - Make MPATH_603 a subclass of UBERON_0000465
+    - Make UBERON_0000104 a subclass of GO_0008150
+    - Make UBERON_0000105 a subclass of GO_0008150
+    - Make UBEROB_0000464 a subclass of BFO_0000004
+    - Make UBERON_0000465 a subclass of BFO_0000040
 5. Save the ontology to `application.owl`
 
 Or skip those steps and just look at the resulting [application.owl](https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/application.owl) file that I've created. The result includes all the terms listed in our `terms.csv` file, plus the dependencies that we want. I've also made adjustements to fit everything under BFO "entity" by adding `subClassOf` assertions here and there.
