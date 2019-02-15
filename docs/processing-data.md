@@ -50,7 +50,7 @@ Turtle is human-readable if we have a good set prefixes to shorten our IRIs to C
 The example code for the conversion is in [TripleConverter.java](https://github.com/OHSU-Library/obo-tutorial/blob/master/code/src/java/obo_tutorial/TripleConverter.java). If you follow the instructions in the [code/README.md](https://github.com/OHSU-Library/obo-tutorial/blob/master/code/README.md), you can run it using a command like this:
 
     cd examples
-    java -jar ../bin/obo-tutorial.jar convert prefixes.ttl data-after.csv data-raw.ttl
+    java -jar obo-tutorial.jar convert prefixes.ttl data-after.csv data-raw.ttl
 
 Here's part of [data-raw.ttl](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-raw.ttl) output file, for just one row:
 
@@ -209,7 +209,7 @@ The [model.rq](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples
 The example code is in [Modeller.java](https://github.com/OHSU-Library/obo-tutorial/blob/master/code/src/java/obo_tutorial/Modeller.java). If you follow the instructions in the [code/README.md](https://github.com/OHSU-Library/obo-tutorial/blob/master/code/README.md), you can run it using a command like this:
 
     cd examples
-    java -jar ../bin/obo-tutorial.jar model data-raw.ttl application.owl model.rq data-after.ttl
+    java -jar obo-tutorial.jar model data-raw.ttl application.owl model.rq data-after.ttl
 
 Now we have the tools to build sophisticated linked data representations of our models. The example here is just that -- an example. It doesn't yet capture all the information in the table we started with. Building good models is hard work, requiring many decisions (large and small) specific to your application.
 
