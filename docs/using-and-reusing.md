@@ -43,7 +43,7 @@ The [Ontology Lookup Service (OLS)](https://www.ebi.ac.uk/ols/index) is a reposi
 ![OntoMaton screenshot](ontomaton.png)
 
 
-## Other places to find ontologies
+### Other places to find ontologies
 
 Ontobee lists all the OBO ontologies and a few more, but the official list is at the OBO home page: <http://obofoundry.org>. That list distinguishes between "OBO Foundry" ontologies that have been reviewed for their adherence to the OBO Foundry principles, and "OBO Library" ontologies that have made a commitment to the principles but have not been reviewed. For each entry there's a brief description of the domain, plus links to information pages and ontology files.
 
@@ -155,11 +155,11 @@ Using an ontology term means using its IRI, but you will also want to keep its l
 
 When you MIREOT a term, you don't have to include its parent terms or logical axioms, but if you don't then you have to be careful. As an example, the term [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) is about 29 nodes deep in the NCBI Taxonomy. If you want to use that term, you probably don't want to import all its ancestors. But you do have to ensure that everything you say about that term is still true! You could place *Homo sapiens* under [Mammalia](http://purl.obolibrary.org/obo/NCBITaxon_40674) in your application ontology, which would be true, even if it doesn't include all the information that's in the NCBI Taxonomy. Don't place it under the NCBI term [Mus musculus](http://purl.obolibrary.org/obo/NCBITaxon_10090) because then your assertion would be false!
 
-#### Importing Sets of Terms Using OBO ROBOT
+### Importing Sets of Terms Using OBO ROBOT
 
 [ROBOT](http://robot.obolibrary.org/) is a tool for working with Open Biomedical Ontologies. It can be used as a command-line tool or as a library for any language on the Java Virtual Machine.  It has an EXTRACT command that enables extraction of sets of terms from ontologies with a variety of techniques, including MIREOT.  [Refer to the documentation to learn more](http://robot.obolibrary.org/extract).
 
-#### Importing Sets of Terms Using OntoFox
+### Importing Sets of Terms Using OntoFox
 
 [OntoFox](http://ontofox.hegroup.org) is a convenient tool for MIREOTing terms from OBO ontologies. You can use the form on the web site, or you can create an input file that specifies the configuration and upload it. The configuration file is useful when you want to run the same import repeatedly, to get the latest versions of the terms, for instance.
 
@@ -193,7 +193,7 @@ The [qtt.txt](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/
 Older versions of Protégé supported the [MappingMaster](http://protege.cim3.net/cgi-bin/wiki.pl?MappingMaster) plugin for QTT, but it is no longer maintained. If you know how to write Java code and use OWLAPI then it's straightfoward to write your own QTT code. But the easiest solution is to use Ontorat.
 
 
-#### Importing Lists of Terms Using Ontorat
+### Importing Lists of Terms Using Ontorat
 
 [Ontorat](http://ontorat.hegroup.org) is another tool in the same family as Ontobee and OntoFox. As with OntoFox, you can use the form on the web site or upload a configuration file. And as with OntoFox, the configuration file has the advantage of being repeatable and providing more powerful options, at the cost of a slightly steeper learning curve.
 
@@ -226,9 +226,11 @@ Here's a screenshot from the latest Protégé 5 beta release importing the 2014-
 
 ![Protégé import screenshot](import.png)
 
+
 ### Editing Ontologies by Hand
 
-Some people prefer the precision and control of editing their ontologies by hand using the [Turtle RDF](https://www.w3.org/TR/turtle/) syntax in a basic text editor.  Protege can export ontologies in Turtle format and there are several RDF format converters available on the web.
+Some people prefer the precision and control of editing their ontologies by hand using the [Turtle RDF](https://www.w3.org/TR/turtle/) syntax in a basic text editor.  Protege and ROBOT can export ontologies in Turtle format and there are several RDF format converters available on the web as well.
+
 
 ## Putting it all Together
 
