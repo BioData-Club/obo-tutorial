@@ -1,6 +1,6 @@
 @prefix obo:   <http://purl.obolibrary.org/obo/> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix tutorial: <https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/obo-tutorial.owl#> .
+@prefix tutorial: <https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/obo-tutorial.owl#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -25,7 +25,7 @@ tutorial:subject-12  a  obo:NCBITaxon_10116 ;
         tutorial:group  tutorial:group-1 .
 
 tutorial:data  a     owl:Ontology ;
-        owl:imports  <https://github.com/jamesaoverton/obo-tutorial/raw/master/examples/application.owl> .
+        owl:imports  <https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/application.owl> .
 
 tutorial:subject-45-sex
         a           obo:PATO_0000384 ;
