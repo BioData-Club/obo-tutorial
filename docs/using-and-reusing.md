@@ -206,6 +206,23 @@ The [ontorat.txt](https://github.com/OHSU-Library/obo-tutorial/blob/master/examp
 On the Ontorat website you can "Load Settings File" with this file to fill in the settings, then "Specify input data file" with a "File upload", and use `qtt.txt`. Then click "Get OWL (RDF/XML) Output File". The resulting OWL file is [ontorat.owl](https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/ontorat.owl). I changed the "Ontology IRI" for this file using Protégé to something more sensible than the default.
 
 
+### Extracting Ontology Modules with ROBOT
+
+Sometimes you want to import too many terms for OntoFox, but the target ontology is too large to import all of it.  Thre's a tool you can use in this case: OBO [ROBOT](http://robot.obolibrary.org/).  ROBOT is like a Swiss Army Knife for ontology manipulation.  It can do many things, including the steps we just did with OntoFox and Ontorat. Here we are going to use it to filter a source ontology down to a smaller subset and then we will extract the terms we want into a module.
+
+Download [Uberon](http://purl.obolibrary.org/obo/uberon/ext.owl) to the examples directory.
+
+Filter Uberon to part_of and has_part
+
+`robot filter --input ext.owl --term BFO:0000050 --term BFO:0000051 --output uberon-subset.owl`
+
+Extract Uberon terms
+
+`obot extract --method STAR --input uberon-subset.owl --term-file uberon-terms.txt --output uberon-mod.owl`
+
+The result is the uberon-module.owl file, with all the terms listed in uberon-terms.txt and all their part_of/has_part dependencies. 
+
+
 ### Importing Ontologies with Protégé
 
 OBO ontologies are part of the web of linked data. Using terms from other ontologies means making links to resources across the web. Another form of linking is *import*: you can import another complete ontology or OWL file into your own ontology.
@@ -226,19 +243,6 @@ Here's a screenshot from the latest Protégé 5 beta release importing the 2014-
 
 ![Protégé import screenshot](import.png)
 
-### Extracting Ontology Modules with ROBOT
-
-Sometimes you want to import too many terms for OntoFox, but the target ontology is too large to import all of it.  Thre's a tool you can use in this case: OBO [ROBOT](http://robot.obolibrary.org/).  ROBOT is like a Swiss Army Knife for ontology manipulation.  It can do many things, including the steps we just did with OntoFox and Ontorat. Here we are going to use it to filter a source ontology down to a smaller subset and then we will extract the terms we want into a module.
-
-Download [Uberon](http://purl.obolibrary.org/obo/uberon/ext.owl) to the examples directory.
-
-Filter Uberon to part_of and has_part
-    `robot filter --input ext.owl --term BFO:0000050 --term BFO:0000051 --output uberon-subset.owl`
-
-Extract Uberon terms
-    `obot extract --method STAR --input uberon-subset.owl --term-file uberon-terms.txt --output uberon-mod.owl`
-
-The result is the uberon-module.owl file, with all the terms listed in uberon-terms.txt and all their part_of/has_part dependencies. 
 
 ### Editing Ontologies by Hand
 
