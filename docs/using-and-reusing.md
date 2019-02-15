@@ -232,7 +232,7 @@ The result is the uberon-module.owl file, with all the terms listed in uberon-te
 
 `java -jar obo-tutorial.jar extract \
 
-uberon.owl \
+ext.owl \
 
 uberon-terms.txt \
 
