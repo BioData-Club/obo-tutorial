@@ -217,7 +217,7 @@ Here's a screenshot from the latest Protégé 5 beta release importing the 2014-
 
 ### Editing Ontologies by Hand
 
-Some people prefer the precision and control of editing their ontologies by hand using the Turtle RDF syntax in a basic text editor.
+Some people prefer the precision and control of editing their ontologies by hand using the Turtle RDF syntax in a basic text editor.  Protege can export ontologies in Turtle format and there are several RDF format converters available on the web.
 
 ## Putting it all Together
 
