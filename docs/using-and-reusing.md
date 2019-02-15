@@ -142,7 +142,12 @@ So those are the three steps:
 
 This [Google spreadsheet](https://docs.google.com/spreadsheets/d/16_CcUQc5bgAiJn2VALGp537uQzavInd5tyqzTbNvQLI/edit?usp=sharing) shows the list of terms from [data-before.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-before.csv), the reference ontology terms to map them to, and the import technique to use. It also shows how you can use the OntoMaton plugin to make searching easier.
 
-A copy of the Google spreadsheet can be found in the [terms.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/terms.csv) file.
+A copy of the Google spreadsheet can be found in the [terms.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/terms.csv) file.  You can use the obo-tutorial.jar program to convert them automatically.
+
+`cd examples
+java -jar obo-tutorial.jar map terms.csv data-before.csv data-after.csv`
+
+You can see the result in [data-after.csv](https://github.com/OHSU-Library/obo-tutorial/blob/master/examples/data-after.csv)
 
 ## Importing Terms
 
