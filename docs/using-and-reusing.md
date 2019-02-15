@@ -230,16 +230,15 @@ The result is the uberon-module.owl file, with all the terms listed in uberon-te
 
 #### Alternative method: use obo-tutorial.jar
 
-`java -jar obo-tutorial.jar extract \
+`java -jar obo-tutorial.jar extract \`
 
-ext.owl \
+`ext.owl \`
 
-uberon-terms.txt \
+`uberon-terms.txt \`
 
-uberon-module.owl \
+`uberon-module.owl \`
 
-"https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/uberon-module.owl"
-`
+`"https://github.com/OHSU-Library/obo-tutorial/raw/master/examples/uberon-module.owl"`
 
 ### Importing Ontologies with Protégé
 
